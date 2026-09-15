@@ -1,0 +1,121 @@
+{
+  "target": "HIV-1 protease",
+  "engines": [
+    "Vina",
+    "Interformer"
+  ],
+  "n_molecules": {
+    "positive": 30,
+    "negative": 40,
+    "decoy": 130
+  },
+  "pose_reproduction": {
+    "Vina": {
+      "reference_ligand": "1xl2_ref",
+      "redock_rmsd": 2.55,
+      "pass_2A": false
+    },
+    "Interformer": {
+      "best_sampled_rmsd": 2.69831,
+      "median_sampled_rmsd": 6.23078,
+      "n_within_2A": 0,
+      "n_poses_generated": 21
+    }
+  },
+  "discrimination": {
+    "pos_vs_neg": {
+      "Vina": {
+        "n": 70,
+        "n_positive": 30,
+        "roc_auc": 0.679,
+        "auprc": 0.651,
+        "ef1": 2.333,
+        "ef5": 2.333,
+        "ef10": 2.0,
+        "bedroc20": 0.865
+      },
+      "Interformer": {
+        "n": 70,
+        "n_positive": 30,
+        "roc_auc": 0.876,
+        "auprc": 0.844,
+        "ef1": 2.333,
+        "ef5": 2.333,
+        "ef10": 2.333,
+        "bedroc20": 0.972
+      }
+    },
+    "pos_vs_decoy": {
+      "Vina": {
+        "n": 160,
+        "n_positive": 30,
+        "roc_auc": 0.44,
+        "auprc": 0.173,
+        "ef1": 0.0,
+        "ef5": 0.667,
+        "ef10": 0.667,
+        "bedroc20": 0.126
+      }
+    },
+    "pos_vs_all": {
+      "Vina": {
+        "n": 200,
+        "n_positive": 30,
+        "roc_auc": 0.496,
+        "auprc": 0.157,
+        "ef1": 0.0,
+        "ef5": 0.667,
+        "ef10": 1.0,
+        "bedroc20": 0.138
+      },
+      "Interformer": {
+        "n": 70,
+        "n_positive": 30,
+        "roc_auc": 0.876,
+        "auprc": 0.844,
+        "ef1": 2.333,
+        "ef5": 2.333,
+        "ef10": 2.333,
+        "bedroc20": 0.972
+      }
+    }
+  },
+  "correlation": {
+    "Vina": {
+      "n": 30,
+      "spearman_rho": 0.36,
+      "spearman_p": 0.0508,
+      "pearson_r": 0.416,
+      "r2": 0.173,
+      "rmse_pactivity": 1.312,
+      "spearman_rho_size_normalised": -0.326
+    },
+    "Interformer": {
+      "n": 30,
+      "spearman_rho": 0.434,
+      "spearman_p": 0.0165,
+      "pearson_r": 0.436,
+      "r2": 0.19,
+      "rmse_pactivity": 1.299,
+      "spearman_rho_size_normalised": -0.476
+    }
+  },
+  "group_properties": {
+    "positive": {
+      "n": 30,
+      "mean_heavy_atoms": 36.3,
+      "mean_mw": 506.0
+    },
+    "negative": {
+      "n": 40,
+      "mean_heavy_atoms": 26.4,
+      "mean_mw": 370.6
+    },
+    "decoy": {
+      "n": 130,
+      "mean_heavy_atoms": 32.6,
+      "mean_mw": 477.7
+    }
+  },
+  "note": "打分统一成数值越大表示结合越强之后再算指标；富集对比只用共同覆盖的分子"
+}

@@ -1,0 +1,34 @@
+# HIV-1 蛋白酶批量对接
+# 所有路径按项目根目录解析。改这个文件就能换靶点、换盒子、换规模。
+
+# ---- 靶点 ----
+target_name      = HIV-1 protease
+receptor_pdb     = data/raw/pdb/1XL2.pdb
+receptor_chains  = A,B
+crystal_ligand   = data/raw/dude/crystal_ligand.mol2
+# 文件名前缀。Interformer 那侧取 sdf 文件名前四个字符当 Target 字段，所以用小写
+pdb_tag          = 1xl2
+
+# ---- 盒子 = 晶体配体包围盒 + 双侧 padding ----
+box_padding      = 6.0
+box_min_size     = 20.0
+
+# ---- 配体库规模 ----
+# 阳性取 30 个：DUD-E 里实测有 Ki/IC50/Kd 的化合物
+# 阴性取 40 个：实测无活性
+# 诱饵取 130 个：跟阳性在分子量、logP、氢键数上配过对，但骨架不相似的化合物
+n_positives      = 30
+n_negatives      = 40
+n_decoys         = 130
+max_heavy_atoms  = 60
+max_mw           = 700.0
+min_p_activity   = 4.0
+max_p_activity   = 11.0
+seed             = 20260915
+
+# ---- 对接参数， vina ----
+exhaustiveness   = 8
+n_poses          = 5
+vina_seed        = 42
+# 并行进程数。Vina 每进程单线程，8 进程在本机 16 线程上跑满
+workers          = 8

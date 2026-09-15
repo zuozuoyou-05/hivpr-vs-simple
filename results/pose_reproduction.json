@@ -1,0 +1,15 @@
+{
+  "ligand_id": "1xl2_ref",
+  "n_poses_generated": 21,
+  "seed_pose_ranks": [
+    20
+  ],
+  "min_rmsd": 0.0,
+  "best_sampled_rmsd": 2.69831,
+  "median_sampled_rmsd": 6.23078,
+  "n_sampled_within_2A": 0,
+  "selected_pose_rank": 20,
+  "rmsd_of_selected_pose": 0.0,
+  "pred_pose_of_selected": 0.8686527,
+  "note": "重原子 RMSD，参考晶体构象；未做对称校正。seed_pose_* 是 MC 采样保留下来的输入构象（RMSD 恒为 0）；best/median_sampled_rmsd 已剔除该构象，反映采样器自身能力；selected_* 是 Interformer PoseScore 头选中的位姿"
+}
