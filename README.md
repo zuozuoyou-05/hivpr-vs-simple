@@ -55,6 +55,11 @@ bash scripts/run_all.sh 20
 | `analyze.py` | 位姿、富集、相关性三件事，出图，写 `metrics.json` |
 | `run_interformer.sh` | 可选，同一批配体再用 Interformer 跑一遍做对照 |
 
+## 看结果
+
+跑完的东西都落在 `results/`。想直接看结论，打开 `vs_results.ipynb`，三件事的表和图都摆好了，不用重跑对接。
+想从零复现，`bash scripts/run_all.sh`，本机 8 进程大约 45 分钟。
+
 ## 流程
 
 ```
